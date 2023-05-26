@@ -1,0 +1,113 @@
+body {
+  background-color: #F3D6D6;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  background-color: #3AAFA9;
+  color: #FFFFFF;
+  padding: 20px;
+  text-align: center;
+}
+
+.header h1 {
+  animation-name: slide-in;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  animation-fill-mode: forwards;
+  opacity: 0;
+  transform: translateY(-50px);
+}
+
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.navbar {
+  text-align: center;
+  padding: 10px;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.navbar li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.navbar a {
+  color: #2D3142;
+  text-decoration: none;
+  padding: 10px;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #FFFFFF;
+}
+
+.main {
+  padding: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .navbar li {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .navbar ul {
+    display: none;
+  }
+
+  .navbar-collapse-btn {
+    display: block;
+    background-color: transparent;
+    color: #2D3142;
+    padding: 10px;
+    text-align: right;
+    transition: color 0.3s ease;
+  }
+
+  .navbar-collapse-btn:hover {
+    color: #FFFFFF;
+  }
+
+  .navbar-collapse {
+    display: none;
+  }
+
+  .navbar-collapse.show {
+    display: block;
+    animation: fadeIn 0.5s ease;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .navbar-collapse-btn {
+    display: none;
+  }
+}
