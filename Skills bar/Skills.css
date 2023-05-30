@@ -1,96 +1,205 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #F3D6D6;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  background-color: #3AAFA9;
+  color: #FFFFFF;
+  padding: 20px;
+  text-align: center;
+  height: 90px;
+}
+
+.header h1 {
+  animation-name: slide-in;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  animation-fill-mode: forwards;
+  opacity: 0;
+  transform: translateY(-50px);
+}
+
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
   }
-  
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  body {
-    background-color: #db6161;
-  }
-  
-  .skills {
-    max-width: 1500px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  
-  .group {
-    flex: 1 0 calc(48% - 10px);
-    margin-bottom: 20px;
-    padding: 20px;
-    background-color: #fff;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-in-out;
-    margin-right: 25px;
-  }
-  
-  .group-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    background-color: #ff5a5f;
-    color: #fff;
-    padding: 10px 0;
-    border-radius: 4px 4px 0 0;
-  }
-  
-  .skill-name {
-    font-size: 20px;
-    font-weight: bold;
+}
+
+.navbar {
+  text-align: center;
+  padding: 10px;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.navbar li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.navbar a {
+  color: #2D3142;
+  text-decoration: none;
+  padding: 10px;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #FFFFFF;
+}
+
+.main {
+  padding: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .navbar li {
+    display: block;
     margin-bottom: 10px;
   }
-  
-  .skill-bar {
-    width: 100%;
-    height: 20px;
-    background-color: #d9d9d9;
-    border-radius: 10px;
-    overflow: hidden;
+
+  .navbar ul {
+    display: none;
   }
-  
-  .skill-level {
-    height: 100%;
-    background-color: #ff5a5f;
-    transition: width 0.6s ease-in-out;
+
+  .navbar-collapse-btn {
+    display: block;
+    background-color: transparent;
+    color: #2D3142;
+    padding: 10px;
+    text-align: right;
+    transition: color 0.3s ease;
   }
-  
-  .skill-percentage {
-    font-size: 14px;
-    margin-top: 10px;
-    color: #555;
+
+  .navbar-collapse-btn:hover {
+    color: #FFFFFF;
   }
-  
-  @media screen and (max-width: 800px) {
-    .group {
-      flex-basis: 100%;
-      margin-right: 0;
+
+  .navbar-collapse {
+    display: none;
+  }
+
+  .navbar-collapse.show {
+    display: block;
+    animation: fadeIn 0.5s ease;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
     }
   }
-  
-  .group:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+@media screen and (min-width: 601px) {
+  .navbar-collapse-btn {
+    display: none;
   }
-  
-  .skill-level {
-    background-color: #ff5a5f;
+}
+
+.skills {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media screen and (max-width: 800px) {
+  .skills {
+    justify-content: center;
   }
-  
-  .group-title:hover {
-    background-color: #ff3b3f;
+}
+
+.group {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #fff;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.group-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  background-color: #ff5a5f;
+  color: #fff;
+  padding: 10px 0;
+  border-radius: 4px 4px 0 0;
+}
+
+.skill-name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.skill-bar {
+  width: 100%;
+  height: 20px;
+  background-color: #d9d9d9;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.skill-level {
+  height: 100%;
+  background-color: #ff5a5f;
+  transition: width 0.6s ease-in-out;
+}
+
+.skill-percentage {
+  font-size: 14px;
+  margin-top: 10px;
+  color: #555;
+}
+
+@media screen and (max-width: 800px) {
+  .group {
+    width: 100%;
   }
-  
-  .skill-level {
-    background: linear-gradient(to right, #ff5a5f, #ff3b3f);
-  }
-  
+}
+
+.group:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.group-title:hover {
+  background-color: #ff3b3f;
+}
+
+.skill-level {
+  background: linear-gradient(to right, #ff5a5f, #ff3b3f);
+}
+
+.language-skills {
+  flex-basis: 800px;
+}
