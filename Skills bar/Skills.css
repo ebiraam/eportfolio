@@ -203,3 +203,14 @@ body {
 .language-skills {
   flex-basis: 800px;
 }
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #3AAFA9;
+  color: #FFFFFF;
+  padding: 30px;
+  text-align: center;
+  height: 8%;
+}
